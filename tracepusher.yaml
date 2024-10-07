@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tracepusher
+  labels:
+    app: tracepusher
+spec:
+  replicas: 1  # Number of pod replicas to run
+  selector:
+    matchLabels:
+      app: tracepusher
+  template:
+    metadata:
+      labels:
+        app: tracepusher
+    spec:
+      containers:
+      - name: tracepusher
+        image: gardnera/tracepusher:v0.8.0-ci
+        args: ["sleep", "1000000000"]
+        ports: []
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      restartPolicy: Always  # Ensures the container restarts if it crashes
