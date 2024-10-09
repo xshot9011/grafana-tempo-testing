@@ -1,179 +1,223 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": {
-            "type": "grafana",
-            "uid": "-- Grafana --"
-          },
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
-    "id": 2,
-    "links": [],
-    "panels": [
+  "annotations": {
+    "list": [
       {
+        "builtIn": 1,
         "datasource": {
-          "type": "tempo",
-          "uid": "PD24F7B7F5EFA542A"
+          "type": "grafana",
+          "uid": "-- Grafana --"
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "custom": {
-              "align": "auto",
-              "cellOptions": {
-                "type": "auto"
-              },
-              "inspect": false
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Trace ID"
-              },
-              "properties": [
-                {
-                  "id": "custom.width",
-                  "value": 287
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 12,
-          "w": 16,
-          "x": 0,
-          "y": 0
-        },
-        "id": 1,
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true,
-          "sortBy": []
-        },
-        "pluginVersion": "10.4.3",
-        "targets": [
-          {
-            "datasource": {
-              "type": "tempo",
-              "uid": "PD24F7B7F5EFA542A"
-            },
-            "filters": [
-              {
-                "id": "d27cbe74",
-                "operator": "=",
-                "scope": "span"
-              },
-              {
-                "id": "service-name",
-                "operator": "=~",
-                "scope": "resource",
-                "tag": "service.name",
-                "value": [
-                  "$service_name"
-                ],
-                "valueType": "string"
-              },
-              {
-                "id": "span-name",
-                "operator": "=",
-                "scope": "span",
-                "tag": "name",
-                "value": [],
-                "valueType": "string"
-              }
-            ],
-            "limit": 20,
-            "query": "11111111111111111111111111111111",
-            "queryType": "traceqlSearch",
-            "refId": "A",
-            "tableType": "traces"
-          }
-        ],
-        "title": "Panel Title",
-        "type": "table"
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
       }
-    ],
-    "schemaVersion": 39,
-    "tags": [],
-    "templating": {
-      "list": [
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "tempo",
+        "uid": "PD24F7B7F5EFA542A"
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 23,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "targets": [
         {
-          "allValue": "",
-          "current": {
-            "selected": false,
-            "text": "All",
-            "value": "$__all"
-          },
           "datasource": {
             "type": "tempo",
             "uid": "PD24F7B7F5EFA542A"
           },
-          "definition": "",
-          "hide": 0,
-          "includeAll": true,
-          "label": "repository_name",
-          "multi": true,
-          "name": "service_name",
-          "options": [],
-          "query": {
-            "label": "service.name",
-            "refId": "TempoDatasourceVariableQueryEditor-VariableQuery",
-            "type": 1
-          },
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "sort": 0,
-          "type": "query"
+          "limit": 20,
+          "query": "ab1a709ace5746a98d2db6faf7819a6a",
+          "queryType": "traceql",
+          "refId": "A",
+          "tableType": "traces"
         }
-      ]
+      ],
+      "title": "Panel Title",
+      "type": "traces"
     },
-    "time": {
-      "from": "now-6h",
-      "to": "now"
-    },
-    "timepicker": {},
-    "timezone": "browser",
-    "title": "Gitlab CICD Tracing",
-    "uid": "adzvsf2jrepkwe",
-    "version": 9,
-    "weekStart": ""
+    {
+      "datasource": {
+        "type": "tempo",
+        "uid": "PD24F7B7F5EFA542A"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Trace ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 287
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "traceID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 267
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 23,
+        "x": 0,
+        "y": 18
+      },
+      "id": 1,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "tempo",
+            "uid": "PD24F7B7F5EFA542A"
+          },
+          "filters": [
+            {
+              "id": "d27cbe74",
+              "operator": "=",
+              "scope": "span"
+            },
+            {
+              "id": "service-name",
+              "operator": "=~",
+              "scope": "resource",
+              "tag": "service.name",
+              "value": [
+                "$service_name"
+              ],
+              "valueType": "string"
+            },
+            {
+              "id": "span-name",
+              "operator": "=",
+              "scope": "span",
+              "tag": "name",
+              "value": [],
+              "valueType": "string"
+            }
+          ],
+          "limit": 20,
+          "query": "bfa2177e8f6b44b1a6517d7c90b354dd",
+          "queryType": "traceql",
+          "refId": "A",
+          "tableType": "traces"
+        }
+      ],
+      "title": "Panel Title",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "tempo",
+          "uid": "PD24F7B7F5EFA542A"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": true,
+        "label": "repository_name",
+        "multi": true,
+        "name": "service_name",
+        "options": [],
+        "query": {
+          "label": "service.name",
+          "refId": "TempoDatasourceVariableQueryEditor-VariableQuery",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-12h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Gitlab CICD Tracing",
+  "uid": "adzvsf2jrepkwe",
+  "version": 4,
+  "weekStart": ""
 }
